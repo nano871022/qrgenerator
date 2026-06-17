@@ -1,0 +1,6 @@
+/app/src/main/java/co/com/japl/dev/qr/generator/api/MatrixGenerator.java
+/app/src/main/java/co/com/japl/dev/qr/generator/color/ColorProvider.java
+/app/src/main/java/co/com/japl/dev/qr/generator/model/QrConfig.java
+/app/src/main/java/co/com/japl/dev/qr/generator/render/FinderDrawer.java
+/app/src/main/java/co/com/japl/dev/qr/generator/render/ModuleDrawer.java
+/app/src/main/java/co/com/japl/dev/qr/generator/CustomQrGenerator.java
