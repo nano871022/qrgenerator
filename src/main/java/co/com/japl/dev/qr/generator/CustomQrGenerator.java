@@ -1,6 +1,9 @@
 package co.com.japl.dev.qr.generator;
 
+import co.com.japl.dev.qr.generator.api.ZxingMatrixGenerator;
 import co.com.japl.dev.qr.generator.model.QrConfig;
+import co.com.japl.dev.qr.generator.render.DefaultQrRenderer;
+import com.google.zxing.WriterException;
 import java.awt.image.BufferedImage;
 
 /**
@@ -30,7 +33,14 @@ public class CustomQrGenerator {
      * @return A BufferedImage containing the QR code.
      */
     public BufferedImage generate() {
-        // Implementation will follow in T5
-        return null;
+        try {
+            ZxingMatrixGenerator matrixGenerator = new ZxingMatrixGenerator();
+            boolean[][] matrix = matrixGenerator.generate(config.content(), config.size());
+
+            DefaultQrRenderer renderer = new DefaultQrRenderer();
+            return renderer.render(matrix, config);
+        } catch (WriterException e) {
+            throw new RuntimeException("Error generating QR matrix", e);
+        }
     }
 }
